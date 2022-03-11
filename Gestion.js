@@ -31,15 +31,20 @@ class Fichier  {
     }
 }
     class GestionFichierJson extends Fichier {
-        
+        LireJSON(){
+            let donnée = fs.readFileSync(this.fichier)
+            let Objet = JSON.parse(donnée)
+            console.log(Objet)
+        }
 
     }
 
-
+let monfichier_json = new GestionFichierJson('test.json')
 let monfichier = new Fichier('myFile.txt')
 
-monfichier.Lire()
-monfichier.affichage()
-monfichier.Ecrire('GOOOOAAAAAAALLLLLLL')
+monfichier_json.LireJSON()
+//monfichier.Lire()
+//monfichier.affichage()
+//monfichier.Ecrire('GOOOOAAAAAAALLLLLLL')
 //monfichier.Supprimer()
-monfichier.vider()
+//monfichier.vider()
